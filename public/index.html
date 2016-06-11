@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="myApp">
 <head>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -10,10 +10,35 @@
     <title>Contact List App</title>
 </head>
 <body>
-<h1>Contact List App</h1>
+<div class="container" ng-app="app" ng-controller="AppControl">
+    <h1>Contact List App</h1>
 
-<input ng-model="test">
-{{test}}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Mobile Number</th>
+                <th>Email</th>
+                <th>Birthday</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="contact in contactList">
+                <td>{{contact.fName}}</td>
+                <td>{{contact.lName}}</td>
+                <td>{{contact.mobileNo}}</td>
+                <td>{{contact.email}}</td>
+                <td>{{contact.bday}}</td>
+                <td>{{contact.address}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="controllers/controller.js"></script>
 </body>
 </html>
